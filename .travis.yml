@@ -11,4 +11,5 @@ script:
   - npm run test:unit
 
 after_success:
+  - npm run build
   - firebase deploy --token $FIREBASE_TOKEN
