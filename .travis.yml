@@ -5,3 +5,9 @@ node_js:
 
 script:
   - npm run test:unit
+
+install:
+  - npm install -g firebase-tools
+
+after_success:
+  - firebase deploy --token $FIREBASE_TOKEN
