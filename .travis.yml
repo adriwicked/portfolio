@@ -9,7 +9,13 @@ install:
 
 script:
   - npm run test:unit
+  - npm run test:e2e
 
 after_success:
   - npm run build
-  - firebase deploy --token $FIREBASE_TOKEN
+
+deploy:
+  provider: firebase
+  token:
+    secure: LC+QzT2sYZxBL5YvyIRScywo+Q/Aj0O1Eq14nOKi8SbvZ68TreWzKFm33YXMfvsqe8BBzDbdmzEDuG3g2KDGw/xdLhjoiP1Z3nz//Yl3iMYj/by1QvXtbplmA0WEvFn1XGqT8AOPa+R0820yFcxJEOiEQNMij0pfpfcvJ15p4uDo4GsyXQySenho8LRF5epf1hAbuxqLAccs5+AVA5JqslXEhooyd85Xf3+Zt2TaMuTrbPLGZmzVwCaAImwPWrCktYSzNW+mJD6jijsaf3zx5g68YeCPvPS3Uzj5TQDatilplNi1LR2mhwfCJfXRSgf5W7sXcMvF7+xspcdtjQFCQ9iRwBxfX6C5GicPaFAq7Lty4rdELpiHvEKiVwNzQ/NxiJHRjY4rjtDNdCS5iLS4XhInq944s2KKMjVQP/lyY7G8/cG/a92UPVXsbJp9/G8KZyY8m77oEeeSrIOgkkP9iZQPVtZ5+mqXPqUfJxwwrk/FfMOVSm8Ja+DguhTv5WPr9VO0kP+zYAQNcpzfVIPe419q6ERviwLWtkB7BJPFYjfOETxLYsxv85DMAaCokBDS8aadsIjAUD07MueYdjPxi1RIaEmk+VNAQYivupiM2JuqaYQVaTC1Gb3kaNscfc4tiSoZqp6nvRqVva5fVliSNTcqi1Z846nL+Q6mV/GbhRg=
+
